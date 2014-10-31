@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.UnsupportedLookAndFeelException;
 
 
 /**
@@ -32,7 +33,13 @@ public class LeagueDocumenter {
 
     public static void main(String[] args) throws InterruptedException {
         
-        DecideWhich.runGUI(); //Will chain into champDecGUI, TipsGUI, and FinishGUI
+        try {
+			DecideWhich.runGUI();
+		} catch (ClassNotFoundException | InstantiationException
+				| IllegalAccessException | UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} //Will chain into champDecGUI, TipsGUI, and FinishGUI
         
     }
     
